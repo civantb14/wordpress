@@ -7,7 +7,7 @@ Donate link: http://shop.webaware.com.au/donations/?donation_for=Flexible+Map
 Tags: google, map, maps, google maps, shortcode, google maps shortcode, kml
 Requires at least: 3.2.1
 Tested up to: 4.3
-Stable tag: 1.9.2
+Stable tag: 1.10.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,7 @@ Many thanks to the generous efforts of our translators:
 * Hungarian (hu) -- Krisztián Vörös
 * Norwegian: Bokmål (nb_NO) -- [neonnero](http://www.neonnero.com/)
 * Norwegian: Nynorsk (nn_NO) -- [neonnero](http://www.neonnero.com/)
+* Portuguese (pt_BR) -- Alexsandro Santos and Paulo Henrique
 * Spanish (es) -- [edurramos](https://profiles.wordpress.org/edurramos/)
 * Welsh (cy) -- [Dylan](https://profiles.wordpress.org/dtom-ct-wp/)
 
@@ -81,6 +82,8 @@ Either the center or the address paramater is required. If you provide both, the
 * **marker**: coordinates of the marker if different from the centre, in latitude,longitude, e.g. *marker="-34.916721,138.828878"*
 * **title**: title of the marker, displayed in a text bubble, e.g. *title="Adelaide Hills"*
 * **link**: URL to link from the marker title, e.g. *link="http://example.com/"*
+* **linktarget**: where marker link opens, e.g. *linktarget="_blank"*
+* **linktext**: marker link text, overriding the default text
 * **icon**: URL to icon for the marker, e.g. *icon="http://maps.google.com/mapfiles/kml/pal3/icon29.png"*
 * **description**: a description of the marker location (can have HTML links), e.g. *description="Lorem ipsum dolor sit amet"*
 * **html**: some simple HTML to add to the info window, e.g. *`<img src='http://example.com/logo.img' />`*
@@ -125,6 +128,8 @@ Either the center or the address paramater is required. If you provide both, the
 * **dirshowssearch**: show or suppress directions search form when showing directions, from [true, false]; default=true
 * **showdirections**: show directions when the map loads, e.g. *showdirections="true"*; default=false
 * **directionsfrom**: initial from: location for directions, e.g. *directionsfrom="Sydney"*
+* **dirunitsystem**: force directions units to metric or imperial, from [metric, imperial, auto]; default=auto
+* **dirtravelmode**: select directions mode, from [driving, bicycling, walking, transit]; default=driving
 * **region**: specify region to help localise address searches for street address map and directions, taken from the list of [country codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) e.g. *region="AU"*
 * **locale**: use a specific locale (language) for messages like the text of the Directions link, e.g. *locale="nl-BE"*
 
@@ -305,6 +310,18 @@ Either turn off CloudFlare Rocketscript :) or install the [Flxmap No Rocketscrip
 4. `[flexiblemap center="-34.916721,138.828878" width="500" height="400" title="Adelaide Hills" directions="true" showdirections="true" directionsfrom="Adelaide"]`
 
 == Changelog ==
+
+= 1.10.0, 2015-08-23 =
+
+* fixed: Brazilian Portuguese translation (thanks, Alexsandro Santos and Paulo Henrique!)
+* fixed: JavaScript error on KML map marker click when marker has no description
+* fixed: can show directions without having a marker title (or infowindow)
+* added: `linktarget` attribute for changing where marker links open, e.g. `linktarget="_blank"`
+* added: `linktext` attribute for changing marker link text
+* added: `dirunitsystem` attribute for forcing directions units to metric or imperial
+* added: `dirtravelmode` attribute for selecting directions by driving, bicycling, walking, or transit
+* changed: bump version of Google Maps API to 3.20
+* changed: always load Google Maps API on HTTPS
 
 = 1.9.2, 2015-03-21 =
 

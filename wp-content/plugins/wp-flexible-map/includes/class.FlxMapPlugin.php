@@ -79,9 +79,8 @@ class FlxMapPlugin {
 	*/
 	public function enqueueScripts() {
 		// allow others to override the Google Maps API URL
-		$protocol = is_ssl() ? 'https' : 'http';
-		$args = apply_filters('flexmap_google_maps_api_args', array('v' => '3.19', 'sensor' => 'false'));
-		$apiURL = apply_filters('flexmap_google_maps_api_url', add_query_arg($args, "$protocol://maps.google.com/maps/api/js"));
+		$args = apply_filters('flexmap_google_maps_api_args', array('v' => '3.20', 'sensor' => 'false'));
+		$apiURL = apply_filters('flexmap_google_maps_api_url', add_query_arg($args, "https://maps.google.com/maps/api/js"));
 		if (!empty($apiURL)) {
 			wp_register_script('google-maps', $apiURL, false, null, true);
 		}
@@ -338,6 +337,16 @@ HTML;
 				$script .= " f.dirShowSearch = false;\n";
 			}
 
+			if (isset($attrs['dirtravelmode']) && in_array(strtolower($attrs['dirtravelmode']), array('bicycling', 'driving', 'transit', 'walking'))) {
+				$dirTravelMode = strtolower($attrs['dirtravelmode']);
+				$script .= " f.dirTravelMode = \"$dirTravelMode\";\n";
+			}
+
+			if (isset($attrs['dirunitsystem']) && in_array(strtolower($attrs['dirunitsystem']), array('imperial', 'metric'))) {
+				$dirUnitSystem = strtolower($attrs['dirunitsystem']);
+				$script .= " f.dirUnitSystem = \"$dirUnitSystem\";\n";
+			}
+
 			if (isset($attrs['maptype'])) {
 				$script .= " f.mapTypeId = \"{$this->str2js($attrs['maptype'])}\";\n";
 			}
@@ -394,6 +403,14 @@ HTML;
 				if (!empty($attrs['link'])) {
 					$link = self::str2js($attrs['link']);
 					$script .= " f.markerLink = \"$link\";\n";
+				}
+
+				if (!empty($attrs['linktarget'])) {
+					$script .= " f.markerLinkTarget = \"{$this->str2js($attrs['linktarget'])}\";\n";
+				}
+
+				if (!empty($attrs['linktext'])) {
+					$script .= " f.markerLinkText = \"{$this->unhtml($attrs['linktext'])}\";\n";
 				}
 
 				if (!empty($attrs['icon'])) {

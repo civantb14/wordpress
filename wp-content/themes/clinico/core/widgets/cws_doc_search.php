@@ -44,13 +44,13 @@
 					<form role="search" method="get" class="doctors-search-form" id="quick-search" action="<?php echo home_url(); ?>">
 						<input type="hidden" name="asearch" value="1">
 						<div class="search_field by_name">
-							<input type="text" placeholder="<?php _e('Search by name', THEME_SLUG); ?>" id="docname" name="docname">
+							<input type="text" placeholder="<?php _e('Buscar por Nombre', THEME_SLUG); ?>" id="docname" name="docname">
 						</div>
 						<div class="search_field by_treatment">
 							<select name="cws-stafftreatments">
 								<?php
 									$depts = get_terms('cws-staff-treatments');
-									echo '<option value="" disabled selected>'. __("Select treatment", THEME_SLUG) . '</option>';
+									echo '<option value="" disabled selected>'. __("Seleccionar por tratamiento", THEME_SLUG) . '</option>';
 									foreach ($depts as $dept=>$v) {
 										echo '<option value="' . $v->slug . '">' . $v->name . '</option>'	;
 									}
@@ -58,7 +58,7 @@
 							</select>
 						</div>
 						<div class='submit_field'>
-							<button type="submit"><?php _e("Search", THEME_SLUG); ?></button>
+							<button type="submit"><?php _e("BUSCAR", THEME_SLUG); ?></button>
 						</div>
 					</form>
 				</section>
