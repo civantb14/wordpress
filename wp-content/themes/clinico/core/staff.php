@@ -4,8 +4,8 @@ add_action('init', 'cws_custom_type_register', THEME_SLUG);
 function cws_custom_type_register() {
 
 	$labels = array(
-		'name' => __('Staff Members', THEME_SLUG),
-		'singular_name' => __('Staff Member', THEME_SLUG),
+		'name' => __('Miembros del Personal', THEME_SLUG),
+		'singular_name' => __('Miembros del Personal', THEME_SLUG),
 		'add_new' => __('Add Staff Member', THEME_SLUG),
 		'add_new_item' => __('Add New Staff Member', THEME_SLUG),
 		'edit_item' => __('Edit Staff Member', THEME_SLUG),

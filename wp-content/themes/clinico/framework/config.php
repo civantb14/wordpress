@@ -903,7 +903,7 @@ if (!class_exists("Redux_Framework_config")) {
 
 
 			// SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-			$this->args['share_icons'][] = array(
+		/*	$this->args['share_icons'][] = array(
 				'url' => 'https://twitter.com/Creative_WS',
 				'title' => 'Follow us on Twitter',
 				'icon' => 'el-icon-twitter'
@@ -917,7 +917,7 @@ if (!class_exists("Redux_Framework_config")) {
 				'url' => 'http://www.behance.net/CreativeWS',
 				'title' => 'Find us on Behance',
 				'icon' => 'el-icon-behance'
-			);
+			);*/
 
 			// Panel Intro text -> before the form
 			if (!isset($this->args['global_variable']) || $this->args['global_variable'] !== false) {

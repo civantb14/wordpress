@@ -58,7 +58,7 @@ $event_id = get_the_ID();
 
 			<!-- Event meta -->
 			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
-				<?php echo tribe_events_single_event_meta() ?>
+			
 			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 			</div><!-- .hentry .vevent -->
 		<?php if( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>

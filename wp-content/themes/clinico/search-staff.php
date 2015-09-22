@@ -83,7 +83,7 @@ if (isset($_GET['asearch'])) {
 													echo $title ? "<div class='widget-title'>" . $title . "</div>" : "";
 													echo cws_post_content_output(500);
 													$positions = wp_get_post_terms( get_the_ID(), 'cws-staff-position');
-													echo "<div class='cats'>" . __("Positions: ",THEME_SLUG);
+													echo "<div class='cats'>" . __("Posición: ",THEME_SLUG);
 													for($i=0;$i<count($positions);$i++) {
 														echo $positions[$i]->name;
 														echo $i<count($positions)-1 ? ", " : "";

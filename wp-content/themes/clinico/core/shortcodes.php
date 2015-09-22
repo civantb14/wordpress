@@ -464,7 +464,7 @@ function shortcode_services($attr) {
 					$proc_obj = get_term($proc, 'cws-staff-procedures');
 					if ($proc_obj) {
 						$out .= '<div class="col_title">' . $proc_obj->name . '</div>';
-						$out .= !empty($proc_obj->description) ? '<div class="desc_row">' . $proc_obj->description . '</div>' : '';
+						$out .= !empty($proc_obj->description) ? '<div class="desc_row"><p style="text-align: justify;">' . $proc_obj->description . '</p></div>' : '';
 					}
 					$proc_children = get_terms('cws-staff-procedures', 'hide_empty=0&parent=' . $proc);
 					if (!empty($proc_children)) {
@@ -481,7 +481,7 @@ function shortcode_services($attr) {
 				if ($v->count > 0) {
 
 					$out .= '<div class="col">';
-					$out .= '<div class="col_title">' . __('Doctors',THEME_SLUG) . '</div>'; // !!!
+					$out .= '<div class="col_title">' . __('Doctor',THEME_SLUG) . '</div>'; // !!!
 
 					$tax_query_arr = array(
 								'taxonomy' => 'cws-staff-dept',

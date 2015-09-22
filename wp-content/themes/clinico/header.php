@@ -102,7 +102,7 @@
 						$widgets = ob_get_clean();
 						if ( !empty($widgets) ):
 						?>
-							<div class="switcher_shadow"></div>
+					        
 							<div id='toggle_sidebar_area' class='theme_color_sb_area'>
 							<?php
 								echo $widgets;
@@ -111,6 +111,7 @@
 							<div class="switcher">
 								<?php echo cws_get_option("toggle-sidebar-title"); ?>
 							</div>
+							
 						<?php
 						endif;
 					endif;
@@ -178,7 +179,7 @@
 		else{
 			echo '<section class="page-title"><div class="container clearfix">';
 				$post_title = is_woo() ? woocommerce_page_title(false) : get_the_title();
-				$page_tile = __( "Search", THEME_SLUG );
+				$page_tile = __( "Resultado de Búsqueda", THEME_SLUG );
 				echo '<h1>' . $page_tile . "</h1>";
 				//echo '<h1>'' . ( is_front_page() ? __("HOME",THEME_SLUG) : get_the_title() ) . "</h1>";
 				echo cws_get_option("breadcrumbs") ? ( is_woo() ? woocommerce_breadcrumb() : dimox_breadcrumbs() ) : "";

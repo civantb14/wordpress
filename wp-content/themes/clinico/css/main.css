@@ -1339,6 +1339,8 @@ input[type=checkbox]:checked:before {
 .wpcf7-form *{
 	vertical-align: middle;
 }
+
+
 .wpcf7-form-control-wrap select,
 .wpcf7-form-control-wrap textarea,
 .wpcf7-form-control-wrap input[type="url"],
@@ -4780,5 +4782,7 @@ only screen and (                min-resolution: 2dppx) {
 	select{
 		background-image: url(../img/select@2x.png) !important;	
 		background-size: 31px 4px;	
-	}	
+	}
+
+
 }
